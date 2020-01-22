@@ -5,7 +5,7 @@ import Element exposing (centerY, fill, padding, rgb, width)
 import Element.Background exposing (color)
 import Element.Input as Input
 import Html exposing (Html)
-import Http exposing (expectString)
+import Http
 
 
 
@@ -41,12 +41,8 @@ update msg model =
                 }
             )
 
-        GotText (Err _) ->
-            ( model, Cmd.none )
-
-        GotText (Ok s) ->
-            ( { model | response = Just s }, Cmd.none )
-
+        GotText getText ->
+            ( { model | response = Result.toMaybe getText }, Cmd.none )
 
 
 ---- VIEW ----
