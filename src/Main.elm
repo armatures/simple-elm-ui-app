@@ -5,7 +5,7 @@ import Element exposing (centerY, fill, padding, rgb, width)
 import Element.Background exposing (color)
 import Element.Input as Input
 import Html exposing (Html)
-import Http
+import Http exposing (expectString)
 
 
 
